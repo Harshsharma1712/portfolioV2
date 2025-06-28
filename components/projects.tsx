@@ -116,7 +116,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </motion.div>
 
           {/* Overlay with buttons - Fixed z-index and pointer events */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 transition-opacity duration-300">
             <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
               <Button
                 size="sm"
