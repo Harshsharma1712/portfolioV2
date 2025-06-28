@@ -2,6 +2,11 @@ import "./globals.css";
 
 import Footer from "@/components/footer";
 
+export const metadata = {
+  title: "Harsh Portfolio",
+  description: "I made this portfolio using Next.js",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
