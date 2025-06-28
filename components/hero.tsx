@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowDownCircle, Download, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -24,7 +24,7 @@ export default function Hero() {
             >
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-                John Doe
+                Harsh Sharma
               </span>
             </motion.h1>
 
@@ -34,7 +34,9 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Full Stack Developer
+              Full Stack {" "}
+              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Developer
+              </span>
             </motion.h2>
 
             <motion.p
@@ -53,13 +55,23 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                <Download className="mr-2 h-4 w-4" /> Download Resume
-              </Button>
 
-              <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10">
-                <Mail className="mr-2 h-4 w-4" /> Contact Me
-              </Button>
+              <Link
+                href="https://drive.google.com/file/d/1YyTWJFB9nj1f_W7OuLXnTHRPgi71Bu8o/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 text-white font-medium rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-md"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                 Resume
+              </Link>
+
+              {/* <a href="mailto:harshsharma17122005@gmail.com">
+                <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500/10">
+                  <Mail className="mr-2 h-4 w-4" /> Contact Me
+                </Button>
+              </a> */}
+
             </motion.div>
           </motion.div>
 
@@ -71,13 +83,13 @@ export default function Hero() {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 blur-2xl opacity-20 animate-pulse" />
+
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-purple-500/30">
                 <Image
-                  src="/placeholder.svg?height=320&width=320"
+                  src="/assets/profile-pic.jpg"
                   alt="Profile"
-                  width={320}
-                  height={320}
-                  className="object-cover"
+                  fill
+                  className="object-cover object-center"
                   priority
                 />
               </div>

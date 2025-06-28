@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import Footer from "@/components/footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -7,9 +9,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      <body className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white"
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

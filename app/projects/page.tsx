@@ -34,6 +34,15 @@ const projects = [
     liveUrl: "https://task-manager-three-bice-75.vercel.app/",
     githubUrl: "https://github.com/Harshsharma1712/task-manager",
   },
+  {
+    id: 4,
+    title: "Gemini Model",
+    description: "Utilize Gemini API and test various capabilities like text Generation, Image Generation.",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["Google GenAI", "JavaScript"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/Harshsharma1712/Gemini-Model-test",
+  },
 ]
 
 export default function Projects() {
@@ -92,77 +101,77 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <>
       <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="relative h-48 overflow-hidden group">
-          <motion.div
-            animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="w-full h-full"
-          >
-            <Image
-              src={project.image || "/placeholder.svg?height=600&width=800"}
-              alt={project.title}
-              width={800}
-              height={600}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative h-48 overflow-hidden group">
+        <motion.div
+          animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="w-full h-full"
+        >
+          <Image
+            src={project.image || "/placeholder.svg?height=600&width=800"}
+            alt={project.title}
+            width={800}
+            height={600}
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
 
-          {/* Overlay with buttons - Fixed z-index and pointer events */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-              <Button
-                size="sm"
-                variant="secondary"
-                className="bg-white/90 text-black hover:bg-white z-10"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.open(project.liveUrl, "_blank", "noopener,noreferrer")
-                }}
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
-              </Button>
+        {/* Overlay with buttons - Fixed z-index and pointer events */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <Button
+              size="sm"
+              variant="secondary"
+              className="bg-white/90 text-black hover:bg-white z-10"
+              onClick={(e) => {
+                e.preventDefault()
+                window.open(project.liveUrl, "_blank", "noopener,noreferrer")
+              }}
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Live Demo
+            </Button>
 
-              <Button
-                size="sm"
-                variant="secondary"
-                className="bg-white/90 text-black hover:bg-white z-10"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.open(project.githubUrl, "_blank", "noopener,noreferrer")
-                }}
-              >
-                <Github className="mr-2 h-4 w-4" />
-                Source Code
-              </Button>
-            </div>
+            <Button
+              size="sm"
+              variant="secondary"
+              className="bg-white/90 text-black hover:bg-white z-10"
+              onClick={(e) => {
+                e.preventDefault()
+                window.open(project.githubUrl, "_blank", "noopener,noreferrer")
+              }}
+            >
+              <Github className="mr-2 h-4 w-4" />
+              Source Code
+            </Button>
           </div>
         </div>
+      </div>
 
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-          <p className="text-gray-400 mb-4">{project.description}</p>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+        <p className="text-gray-400 mb-4">{project.description}</p>
 
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
     </>
   )
 }

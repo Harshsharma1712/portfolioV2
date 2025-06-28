@@ -1,4 +1,3 @@
-import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Projects from "@/components/projects"
 import TechStack from "@/components/tech-stack"
@@ -9,12 +8,11 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
-        <Header />
         <Hero />
         <Projects />
         <TechStack />
-        <Contact />
         <Footer />
+        <Contact />
       </main>
     </>
 
