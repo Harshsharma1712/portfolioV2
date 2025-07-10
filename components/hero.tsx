@@ -57,7 +57,7 @@ export default function Hero() {
             >
 
               <Link
-                href="https://drive.google.com/file/d/19ZligjhAMCm8lXHjIuezHIOPoscpUk4B/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1pc374SbDxfoSCCpbG3FngydLnfqgebHs/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 text-white font-medium rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-md"
